@@ -1,10 +1,11 @@
 {
   "name": "locar-tester",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "three": "latest",
+    "three": "^0.169.0",
+    "locar": "^0.0.5",
     "vite-express": "^0.20.0"
   },
   "devDependencies": {

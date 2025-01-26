@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import * as LocAR from './lib/main.js';
+import * as LocAR from 'locar';
 
 const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.001, 1000);
 
@@ -9,7 +9,19 @@ document.body.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
 
-const locar = new LocAR.LocationBased(scene, camera);
+const logger = {
+    sendData: async function(endpoint, data) {
+        return await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+    }
+};
+
+const locar = new LocAR.LocationBased(scene, camera, {}, logger);
 
 window.addEventListener("resize", e => {
     renderer.setSize(window.innerWidth, window.innerHeight);
