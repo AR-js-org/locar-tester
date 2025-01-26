@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input[type=submit] {
+    font-size: 150%;
+}
+</style>
+<title>LocAR.js tester</title>
+</head>
+<body style='font-family: sans-serif; font-size:200%'>
+<h1>LocAR.js tester - privacy notice</h1>
+<p>Before using this tester, please agree to the following privacy notice. The app will send your GPS data to this server for logging/debugging purposes. It will send and log the following:
+<ul>
+<li>The date and time at which GPS listening begins;</li>
+<li>Your initial location;</li>
+<li>The location of each new GPS position;</li>
+<li>Your GPS accuracy.</li>
+</ul>
+It will also give you a unique numerical session ID and associate each reading with your session ID. However it does not collect any personal information (name, gmail account, etc).</p>
+<form method="post" action="/acceptPrivacy">
+<input type="hidden" name="accepted" value="yes" />
+<input type="submit" value="Please click if you agree to the above." />
+</form>
+</body>
+</html>
